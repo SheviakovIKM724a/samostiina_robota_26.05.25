@@ -1,20 +1,25 @@
 ﻿#include <iostream>
-#include <string>
 using namespace std;
 
 template <typename T>
-T maxValue(T a, T b) {
-    return (a > b) ? a : b;
+void swapValues(T& a, T& b) {
+    T temp = a;
+    a = b;
+    b = temp;
 }
 
 int main() {
     system("chcp 1251 > nul"); // Підключення української мови
 
-    cout << "Максимум з 5 і 10: " << maxValue(5, 10) << endl;
-    cout << "Максимум з 3.14 і 2.71: " << maxValue(3.14, 2.71) << endl;
-    cout << "Максимум з 'a' і 'z': " << maxValue('a', 'z') << endl;
-    cout << "Максимум з рядків \"apple\" і \"banana\": "
-        << maxValue(string("apple"), string("banana")) << endl;
+    int x = 5, y = 10;
+    cout << "До обміну: x = " << x << ", y = " << y << endl;
+    swapValues(x, y);
+    cout << "Після обміну: x = " << x << ", y = " << y << endl;
+
+    double a = 3.14, b = 2.71;
+    cout << "\nДо обміну: a = " << a << ", b = " << b << endl;
+    swapValues(a, b);
+    cout << "Після обміну: a = " << a << ", b = " << b << endl;
 
     return 0;
 }
