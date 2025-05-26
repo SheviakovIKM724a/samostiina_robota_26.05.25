@@ -4,19 +4,24 @@
 using namespace std;
 
 int main() {
-    system("chcp 1251 > nul"); // Підключення української мови в консолі
+    system("chcp 1251 > nul"); // Підключення української мови в консолі Windows
 
-    vector<int> numbers; // створюємо вектор цілих чисел
+    int n;
+    cout << "Введіть кількість чисел: ";
+    cin >> n;
 
-    // Заповнюємо вектор числами від 1 до 10
-    for (int i = 1; i <= 10; ++i) {
-        numbers.push_back(i);
+    vector<int> numbers;
+
+    cout << "Введіть " << n << " цілих чисел:\n";
+    for (int i = 0; i < n; ++i) {
+        int value;
+        cin >> value;
+        numbers.push_back(value);
     }
 
-    // Виводимо елементи вектора на екран
-    cout << "Елементи вектора: ";
-    for (int i = 0; i < numbers.size(); ++i) {
-        cout << numbers[i] << " ";
+    cout << "Ви ввели числа: ";
+    for (int num : numbers) {
+        cout << num << " ";
     }
     cout << endl;
 
