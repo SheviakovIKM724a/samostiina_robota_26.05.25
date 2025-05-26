@@ -1,25 +1,20 @@
 ﻿#include <iostream>
 #include <string>
-
 using namespace std;
 
-// Шаблонна функція для порівняння двох значень
 template <typename T>
-bool compareValues(const T& a, const T& b) {
-    return a == b;
+T maxValue(T a, T b) {
+    return (a > b) ? a : b;
 }
 
 int main() {
-    cout << boolalpha; // Для виводу true/false замість 1/0
+    system("chcp 1251 > nul"); // Підключення української мови
 
-    int x = 5, y = 5;
-    cout << "Рівні цілі числа: " << compareValues(x, y) << endl;
-
-    double d1 = 3.14, d2 = 2.71;
-    cout << "Рівні дробові числа: " << compareValues(d1, d2) << endl;
-
-    string s1 = "hello", s2 = "hello";
-    cout << "Рівні рядки: " << compareValues(s1, s2) << endl;
+    cout << "Максимум з 5 і 10: " << maxValue(5, 10) << endl;
+    cout << "Максимум з 3.14 і 2.71: " << maxValue(3.14, 2.71) << endl;
+    cout << "Максимум з 'a' і 'z': " << maxValue('a', 'z') << endl;
+    cout << "Максимум з рядків \"apple\" і \"banana\": "
+        << maxValue(string("apple"), string("banana")) << endl;
 
     return 0;
 }
