@@ -1,25 +1,29 @@
 ﻿#include <iostream>
 using namespace std;
 
-template <typename T>
-void swapValues(T& a, T& b) {
-    T temp = a;
-    a = b;
-    b = temp;
+template<typename T>
+bool contains(const T* arr, size_t size, const T& value) {
+    for (size_t i = 0; i < size; ++i) {
+        if (arr[i] == value) {
+            return true;
+        }
+    }
+    return false;
 }
 
 int main() {
     system("chcp 1251 > nul"); // Підключення української мови
 
-    int x = 5, y = 10;
-    cout << "До обміну: x = " << x << ", y = " << y << endl;
-    swapValues(x, y);
-    cout << "Після обміну: x = " << x << ", y = " << y << endl;
+    int arr[] = { 1, 2, 3, 4, 5 };
+    size_t size = sizeof(arr) / sizeof(arr[0]);
 
-    double a = 3.14, b = 2.71;
-    cout << "\nДо обміну: a = " << a << ", b = " << b << endl;
-    swapValues(a, b);
-    cout << "Після обміну: a = " << a << ", b = " << b << endl;
+    int valueToFind = 3;
+    if (contains(arr, size, valueToFind)) {
+        cout << "Значення " << valueToFind << " знайдено в масиві.\n";
+    }
+    else {
+        cout << "Значення " << valueToFind << " не знайдено в масиві.\n";
+    }
 
     return 0;
 }
