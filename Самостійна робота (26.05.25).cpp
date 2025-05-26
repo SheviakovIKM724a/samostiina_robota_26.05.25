@@ -10,7 +10,7 @@ bool contains(const T* arr, size_t size, const T& value) {
     }
     return false;
 }
-
+ 
 int main() {
     system("chcp 1251 > nul"); // Підключення української мови
 
